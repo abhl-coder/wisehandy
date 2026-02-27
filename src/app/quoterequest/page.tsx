@@ -1,5 +1,5 @@
-import Script from "next/script";
 import SiteLayout from "@/components/SiteLayout";
+import JobberEmbed from "@/components/JobberEmbed";
 
 export default function QuoteRequestPage() {
   return (
@@ -15,16 +15,10 @@ export default function QuoteRequestPage() {
           </p>
 
           <div className="card" style={{ marginTop: 24 }}>
-            <div id="7f3ece77-41bb-4938-a348-736efae5b2bc-1001377" />
+            <JobberEmbed />
           </div>
         </div>
       </section>
-      <Script
-        src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
-        data-clienthub_id="7f3ece77-41bb-4938-a348-736efae5b2bc-1001377"
-        data-form_url="https://clienthub.getjobber.com/client_hubs/7f3ece77-41bb-4938-a348-736efae5b2bc/public/work_request/embedded_work_request_form?form_id=1001377"
-        strategy="afterInteractive"
-      />
     </SiteLayout>
   );
 }
