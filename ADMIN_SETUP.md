@@ -25,6 +25,7 @@ Fill these in `.env.local`:
 - `SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `SESSION_SECRET`
+- `PRISMA_CLIENT_ENGINE_TYPE` (set to `library`)
 
 To send the same values to Vercel (once filled), run:
 
