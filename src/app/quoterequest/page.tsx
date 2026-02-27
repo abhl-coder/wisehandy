@@ -1,3 +1,4 @@
+import Script from "next/script";
 import SiteLayout from "@/components/SiteLayout";
 
 export default function QuoteRequestPage() {
@@ -13,41 +14,17 @@ export default function QuoteRequestPage() {
             Share the details below and we will get back to you quickly.
           </p>
 
-          <form className="card" style={{ marginTop: 24 }}>
-            <div className="form-grid">
-              <div>
-                <label>Name</label>
-                <input className="input" placeholder="Full name" />
-              </div>
-              <div>
-                <label>Email</label>
-                <input className="input" placeholder="contact@americashandy.com" />
-              </div>
-              <div>
-                <label>Phone</label>
-                <input className="input" placeholder="407-404-4501" />
-              </div>
-              <div>
-                <label>Address</label>
-                <input className="input" placeholder="Street address" />
-              </div>
-            </div>
-            <div style={{ marginTop: 16 }}>
-              <label>Project Details</label>
-              <textarea placeholder="Describe what you need help with." />
-            </div>
-            <div style={{ marginTop: 20 }}>
-              <button className="btn btn-primary" type="submit">
-                Send Request
-              </button>
-            </div>
-            <p className="subtle" style={{ marginTop: 10, fontSize: 13 }}>
-              This form is a request only. We will confirm availability and
-              pricing by email or phone.
-            </p>
-          </form>
+          <div className="card" style={{ marginTop: 24 }}>
+            <div id="7f3ece77-41bb-4938-a348-736efae5b2bc-1001377" />
+          </div>
         </div>
       </section>
+      <Script
+        src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"
+        data-clienthub_id="7f3ece77-41bb-4938-a348-736efae5b2bc-1001377"
+        data-form_url="https://clienthub.getjobber.com/client_hubs/7f3ece77-41bb-4938-a348-736efae5b2bc/public/work_request/embedded_work_request_form?form_id=1001377"
+        strategy="afterInteractive"
+      />
     </SiteLayout>
   );
 }

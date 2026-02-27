@@ -15,10 +15,29 @@ const body = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Wise Handy | Full‑Service Commercial & Home Repair",
+  title: {
+    default: "Wise Handy | Full‑Service Commercial & Home Repair",
+    template: "%s | Wise Handy",
+  },
   description:
-    "Professional handyman services for home and commercial projects. Book a Pro today.",
+    "Professional handyman services for home and commercial projects in Florida. Repairs, installations, improvements, and exterior work.",
   metadataBase: new URL("https://wisehandy.com"),
+  alternates: {
+    canonical: "https://wisehandy.com",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://wisehandy.com",
+    title: "Wise Handy | Full‑Service Commercial & Home Repair",
+    description:
+      "Professional handyman services for home and commercial projects in Florida.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wise Handy | Full‑Service Commercial & Home Repair",
+    description:
+      "Professional handyman services for home and commercial projects in Florida.",
+  },
 };
 
 export default function RootLayout({

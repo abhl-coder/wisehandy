@@ -1,6 +1,12 @@
 import Image from "next/image";
 import SiteLayout from "@/components/SiteLayout";
 
+export const metadata = {
+  title: "About Us",
+  description:
+    "Learn about Wise Handy and our mission to deliver reliable home and commercial repairs.",
+};
+
 export default function AboutUsPage() {
   return (
     <SiteLayout>

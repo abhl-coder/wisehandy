@@ -1,5 +1,11 @@
 import SiteLayout from "@/components/SiteLayout";
 
+export const metadata = {
+  title: "Reviews",
+  description:
+    "Read reviews from Wise Handy customers and see why homeowners trust our service.",
+};
+
 const testimonials = [
   {
     name: "Wade",

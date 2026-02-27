@@ -1,6 +1,12 @@
 import Image from "next/image";
 import SiteLayout from "@/components/SiteLayout";
 
+export const metadata = {
+  title: "Transfer Switch Generator",
+  description:
+    "Safe, code‑compliant transfer switch installations for generators in Florida.",
+};
+
 export default function TransferSwitchPage() {
   return (
     <SiteLayout>

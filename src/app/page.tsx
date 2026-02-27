@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteLayout from "@/components/SiteLayout";
 
+export const metadata = {
+  title: "Home",
+  description:
+    "Wise Handy provides full‑service home and commercial repairs in Florida. Book a pro today.",
+};
+
 export default function Home() {
   return (
     <SiteLayout>
