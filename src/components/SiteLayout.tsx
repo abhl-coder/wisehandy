@@ -1,10 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
+import { getMenuByLocation } from "@/lib/content";
 
-export default function SiteLayout({
+export default async function SiteLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const menu = await getMenuByLocation("main");
+  const items =
+    menu?.items?.length
+      ? menu.items.map((i) => ({ label: i.label, url: i.url }))
+      : [
+          { label: "Home", url: "/" },
+          { label: "About Us", url: "/aboutus" },
+          { label: "Reviews", url: "/reviews" },
+          { label: "Quote Request", url: "/quoterequest" },
+          { label: "Transfer Switch Generator", url: "/electrictansferswitchgenerator" },
+        ];
+
   return (
     <>
       <div className="topbar">
@@ -16,16 +30,21 @@ export default function SiteLayout({
       <header className="nav">
         <div className="container">
           <Link className="logo" href="/">
-            Wise Handy
+            <Image
+              src="/images/wiselogo.png"
+              alt="Wise Handy"
+              width={500}
+              height={100}
+              style={{ height: "40px", width: "auto" }}
+              priority
+            />
           </Link>
           <nav className="nav-links">
-            <Link href="/">Home</Link>
-            <Link href="/aboutus">About Us</Link>
-            <Link href="/reviews">Reviews</Link>
-            <Link href="/quoterequest">Quote Request</Link>
-            <Link href="/electrictansferswitchgenerator">
-              Transfer Switch Generator
-            </Link>
+            {items.map((item) => (
+              <Link key={item.url} href={item.url}>
+                {item.label}
+              </Link>
+            ))}
           </nav>
           <a
             className="btn btn-primary"

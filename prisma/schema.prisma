@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  role         String   @default("owner")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  sessions     Session[]
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Asset {
+  id        String   @id @default(uuid())
+  name      String
+  url       String
+  width     Int?
+  height    Int?
+  alt       String?
+  mimeType  String?
+  sizeBytes Int?
+  createdAt DateTime @default(now())
+  pageOgImages Page[] @relation("PageOgImage")
+}
+
+model Page {
+  id           String   @id @default(uuid())
+  slug         String   @unique
+  title        String
+  status       String   @default("published")
+  seoTitle     String?
+  seoDesc      String?
+  canonicalUrl String?
+  ogTitle      String?
+  ogDesc       String?
+  ogImageId    String?
+  ogImage      Asset?   @relation("PageOgImage", fields: [ogImageId], references: [id])
+  body         Json
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Menu {
+  id        String     @id @default(uuid())
+  name      String
+  location  String
+  items     MenuItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model MenuItem {
+  id        String     @id @default(uuid())
+  menuId    String
+  menu      Menu       @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  label     String
+  url       String
+  order     Int
+  parentId  String?
+  parent    MenuItem?  @relation("MenuTree", fields: [parentId], references: [id])
+  children  MenuItem[] @relation("MenuTree")
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model SiteSetting {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

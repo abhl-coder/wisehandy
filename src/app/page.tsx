@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import SiteLayout from "@/components/SiteLayout";
+import PageRenderer from "@/components/PageRenderer";
+import { getPageBySlug } from "@/lib/content";
 
 export const metadata = {
   title: "Home",
@@ -8,7 +10,16 @@ export const metadata = {
     "Wise Handy provides full‑service home and commercial repairs in Florida. Book a pro today.",
 };
 
-export default function Home() {
+export default async function Home() {
+  const page = await getPageBySlug("");
+  if (page && page.body) {
+    return (
+      <SiteLayout>
+        <PageRenderer blocks={page.body as any} />
+      </SiteLayout>
+    );
+  }
+
   return (
     <SiteLayout>
       <section className="section">
@@ -77,7 +88,7 @@ export default function Home() {
             <div>
               <span className="pill">Our Services</span>
               <h2 className="h2" style={{ marginTop: 16 }}>
-                Appliances • Carpentry • Electrical • Plumbing
+                Remodeling • Carpentry • Electrical • Plumbing • Fences
               </h2>
               <p className="subtle" style={{ marginTop: 14 }}>
                 From small repairs to full home improvements, we handle the
