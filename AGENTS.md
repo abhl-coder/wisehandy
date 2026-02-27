@@ -1,5 +1,6 @@
 <INSTRUCTIONS>
-If the user says they are not a programmer (or asks for a didactic explanation), explain in simple English with numbered steps, no jargon, and exact click/field guidance. Always remind not to commit or share secrets/tokens.
+Sempre se comunique comigo em Português Brasileiro.
+Como não sou programador, explique tudo de forma didática, com passo a passo numerado, sem jargões, dizendo exatamente onde clicar/colar e o que esperar ver. Sempre lembre de não publicar tokens/senhas no Git.
 
 Stack for this repo:
 - Next.js App Router

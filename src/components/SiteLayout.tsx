@@ -48,7 +48,7 @@ export default async function SiteLayout({
           </nav>
           <a
             className="btn btn-primary"
-            href="https://clienthub.getjobber.com/client_hubs/c4dc76e7-25a1-4c8f-bc1c-1852acec6b81/public/work_request/new"
+            href="https://clienthub.getjobber.com/hubs/7f3ece77-41bb-4938-a348-736efae5b2bc/public/requests/1001377/new"
             target="_blank"
             rel="noopener noreferrer"
           >
