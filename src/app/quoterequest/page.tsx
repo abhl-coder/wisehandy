@@ -14,7 +14,10 @@ export default function QuoteRequestPage() {
             Share the details below and we will get back to you quickly.
           </p>
 
-          <div className="card" style={{ marginTop: 24 }}>
+          <div
+            className="card jobber-card"
+            style={{ marginTop: 24 }}
+          >
             <JobberEmbed />
           </div>
         </div>
